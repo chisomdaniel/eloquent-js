@@ -1,25 +1,26 @@
 #!/usr/bin/env node
-
-let size = 8;
-
-let a = '#';
-let b = ' ';
-
-let row1 = a, row2 = b, new_string = '';
+let size = 10;  // change size to any number
 
 for (let i = 0; i < size; i++) {
-    if (i % 2 === 0) {
-        row1 += ' ';
-        row2 += '#';
-    } else {
-        row1 += '#';
-        row2 += ' ';
+    let line = "";
+    for (let j = 1; j <= size; j++) {
+        if (i % 2 === 0) {
+            line += j % 2 == 0 ? "#" : " ";
+        } else {
+            line += j % 2 == 0 ? " " : "#";
+        }
     }
-};
-
-for (let i = 1; i < size + 1; i++) {
-    if (i % 2 === 0) new_string += row2 + '\n';
-    else new_string += row1 + '\n';
+    console.log(line);
 }
-
-console.log(new_string)
+/* output:
+ # # # # #
+# # # # # 
+ # # # # #
+# # # # # 
+ # # # # #
+# # # # # 
+ # # # # #
+# # # # # 
+ # # # # #
+# # # # # 
+*/
